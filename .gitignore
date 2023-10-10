@@ -2,4 +2,6 @@
 *~
 
 **/.vscode/
-a.json
+*.json
+
+.env

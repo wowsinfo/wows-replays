@@ -379,6 +379,14 @@ fn survey_file(skip_decode: bool, replay: std::path::PathBuf) -> SurveyResult {
 }
 
 fn main() {
+    let input = r"C:\Games\World_of_Warships\replays\20230924_220853_PGSD209-Felix-Schultz_19_OC_prey.wowsreplay";
+    let dump = wows_replays::analyzer::decoder::DecoderBuilder::new(
+        false,
+        true,
+        Some("a.json"),
+    );
+    parse_replay(&std::path::PathBuf::from(input), dump).unwrap();
+
     let replay_arg = Arg::with_name("REPLAY")
         .help("The replay file to use")
         .required(true)
